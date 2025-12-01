@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Mini Project</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #openDialog {
+            padding: 12px 20px;
+            background: #4e9eff;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        #openDialog:hover {
+            background: #297ee8;
+        }
+
+        ul {
+            max-width: 400px;
+            margin: auto;
+            padding-left: 20px;
+        }
+
+        li {
+            background: #1c1c1c;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4e9eff;
+            border-radius: 6px;
+        }
+
+        /* Dialog styles */
+        dialog {
+            background: #161616;
+            color: white;
+            padding: 25px;
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        dialog::backdrop {
+            background: rgba(0,0,0,0.6);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            background: #4e9eff;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #297ee8;
+        }
+
+        .cancel {
+            background: #666;
+        }
+
+        .cancel:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Task Manager</h1>
+
+    <!-- OPEN DIALOG BUTTON -->
+    <button id="openDialog">Add Task</button>
+
+    <!-- LIST -->
+    <ul id="taskList"></ul>
+
+    <!-- DIALOG -->
+    <dialog id="taskDialog">
+        <h3>Add a New Task</h3>
+
+        <input type="text" id="taskInput" placeholder="Task name...">
+
+        <div style="text-align:right;">
+            <button class="btn" id="addTask">Add</button>
+            <button class="btn cancel" id="closeDialog">Cancel</button>
+        </div>
+    </dialog>
+
+    <script>
+        const dialog = document.getElementById("taskDialog");
+        const openBtn = document.getElementById("openDialog");
+        const closeBtn = document.getElementById("closeDialog");
+        const addBtn = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+        const taskInput = document.getElementById("taskInput");
+
+        openBtn.onclick = () => {
+            taskInput.value = "";
+            dialog.showModal();
+        };
+
+        closeBtn.onclick = () => dialog.close();
+
+        addBtn.onclick = () => {
+            const value = taskInput.value.trim();
+
+            if (!value) {
+                alert("You must type something!");
+                return;
+            }
+
+            const li = document.createElement("li");
+            li.textContent = value;
+
+            taskList.appendChild(li);
+            dialog.close();
+        };
+    </script>
+
+</body>
+</html>

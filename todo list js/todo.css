@@ -1,0 +1,125 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+  font-family: Charcoal, sans-serif;}
+body{
+background: linear-gradient(40deg, #1CB5E0 0%, #000851 100%);
+
+background-attachment: scroll;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+main{
+    border: white 2px solid;
+    border-radius: 10px;
+    min-width: 350px;
+   width: 30%;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 3px 2px 30px rgb(35, 35, 66);
+    animation: appear 1s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+}
+@keyframes appear {
+     from{
+       opacity: 0;
+       scale: 0.1;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+      
+    }
+}
+main h1{
+    color: white;
+    margin-bottom: 1rem;
+}
+#todo{
+     border: 2px solid #ccc; outline: none;
+    border-radius: 99px;
+    width:80%; 
+   padding: 5px;
+    
+}
+#add{
+    color: white;
+    background-color: #2436cf;
+    border: 1px white solid;
+    width:15%;
+    flex: 1;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 1px 5px 10px #000851;
+}
+.tasks{
+    
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+    
+
+}
+.tasks ul{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+}
+.tasks > ul>li{
+    text-align: start;
+list-style: none;
+text-decoration: none  ;
+background-color: #ffffff86;
+border-radius: 10px;
+width: 80%;
+min-width: 300px;
+padding: 10px;
+box-shadow: 1px 0px 4px #8991e9;
+animation: appearence 1s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) both ;
+
+}
+
+
+.tasks > ul>li>input{
+    transform: translateY(2px);
+
+
+}
+.tasks > ul>li>input:checked{
+   
+    accent-color: #3f4cbe;
+
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete {
+  margin-left: auto;   /* pushes the button to the right */
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.delete:hover {
+  background-color: #e63939;
+}
+
+.delete:active {
+  transform: scale(0.95);
+}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Presentation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #4e9eff;
+        }
+
+        .card h2 {
+            margin: 0;
+            color: #4e9eff;
+        }
+
+        .card p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        button, a.button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #4e9eff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        button:hover, a.button:hover {
+            background: #297ee8;
+        }
+
+        /* Dialog style */
+        dialog {
+            background: #111;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        dialog::backdrop {
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Tags Presentation</h1>
+
+    <!-- TEMPLATE CARD -->
+    <div class="card">
+        <h2>&lt;template&gt;</h2>
+        <p>
+            The <b>&lt;template&gt;</b> tag stores HTML that is not shown on the page.
+            It is used as a hidden blueprint that JavaScript can clone and insert
+            into the DOM to create repeated components like cards, lists, or UI elements.
+        </p>
+        <a class="button" href="\todo list js\todo.html"target="_blank" >View Project</a>
+    </div>
+
+    <!-- DIALOG CARD -->
+    <div class="card">
+        <h2>&lt;dialog&gt;</h2>
+        <p>
+            The <b>&lt;dialog&gt;</b> element creates native popup windows (modals).
+            You can open it using JavaScript with <code>.show()</code> or
+            <code>.showModal()</code>. It includes a built-in backdrop and is
+            supported by all modern browsers.
+        </p>
+        <button onclick="demoDialog.showModal()">Open Demo Dialog</button>
+        <a class="button" href="\dialog\dialog.html" target="_blank">View Project</a>
+    </div>
+
+    <!-- DIALOG ELEMENT -->
+    <dialog id="demoDialog">
+        <h3>Dialog Demo</h3>
+        <p>This is a native HTML dialog.</p>
+        <button onclick="demoDialog.close()">Close</button>
+    </dialog>
+
+    <!-- PICTURE CARD -->
+    <div class="card">
+        <h2>&lt;picture&gt;</h2>
+        <p>
+            The <b>&lt;picture&gt;</b> tag provides responsive images. It chooses the best image depending on screen size or format.
+            You can serve WebP for modern browsers and JPG as fallback, or completely different images for mobile and desktop.
+        </p>
+        <a class="button" href="picture/picture.html" target="_blank">View Project</a>
+    </div>
+
+</body>
+</html>
